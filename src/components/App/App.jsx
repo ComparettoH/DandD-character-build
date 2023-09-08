@@ -13,14 +13,26 @@ import Footer from '../Footer/Footer';
 
 import ProtectedRoute from '../ProtectedRoute/ProtectedRoute';
 
+import './App.css';
+
 import AboutPage from '../AboutPage/AboutPage';
 import UserPage from '../UserPage/UserPage';
 import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import CharacterList from '../CharacterList/CharacterList';
+import CharacterEdit from '../CharacterEdit/CharacterEdit';
+import CharacterDelete from '../CharacterDelete/CharacterDelete';
+import Build1 from '../Build1/Build1';
+import Build2 from '../Build2/Build2';
+import Build3 from '../Build3/Build3';
+import Build4 from '../Build4/Build4';
+import Build5 from '../Build5/Build5';
+import Build6 from '../Build6/Build6';
+import Build7 from '../Build7/Build7';
+import CharacterReview from '../CharacterReview/CharacterReview';
 
-import './App.css';
 
 function App() {
   const dispatch = useDispatch();
@@ -67,6 +79,56 @@ function App() {
           >
             <InfoPage />
           </ProtectedRoute>
+          
+          {/* Note - all of these routes will need to be protected eventually!!! */}
+          {/* User Homepage */}
+          <Route exact path="/home">
+         
+          </Route>
+          {/* User Character List */}
+          <Route exact path="/character-list">
+          <CharacterList />
+          </Route>
+          {/* User Edit View */}
+          <Route exact path="/character-edit">
+          <CharacterEdit />
+          </Route>
+          {/* User Delete View */}
+          <Route exact path="/character-delete">
+          <CharacterDelete />
+          </Route>
+          {/* User Character Build step 1 */}
+          <Route exact path="/character-build-1">
+          <Build1 />
+          </Route>
+          {/* User Character Build step 2 */}
+          <Route exact path="/character-build-2">
+          <Build2 />
+          </Route>
+          {/* User Character Build step 3 */}
+          <Route exact path="/character-build-3">
+          <Build3 />
+          </Route>
+          {/* User Character Build step 4 */}
+          <Route exact path="/character-build-4">
+          <Build4 />
+          </Route>
+          {/* User Character Build step 5 */}
+          <Route exact path="/character-build-5">
+          <Build5 />
+          </Route>
+          {/* User Character Build step 6 */}
+          <Route exact path="/character-build-6">
+          <Build6 />
+          </Route>
+          {/* User Character Build step 7 */}
+          <Route exact path="/character-build-7">
+          <Build7 />
+          </Route>
+          {/* User Character Build Review/Confirmation */}
+          <Route exact path="/character-review">
+          <CharacterReview />
+          </Route>  
 
           <Route
             exact
