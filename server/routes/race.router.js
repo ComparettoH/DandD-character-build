@@ -6,13 +6,13 @@ const router = express.Router();
 
 
 router.get('/', (req, res) => {
-  const queryText = `SELECT * FROM "character_gender";`
+  const queryText = `SELECT * FROM "character_race";`
   pool.query(queryText)
   .then( (result) => {
     res.send(result.rows);
   })
   .catch((err) => {
-    console.log('Error with gender GET', err);
+    console.log('Error with race GET', err);
     res.sendStatus(500);
   })
 });
