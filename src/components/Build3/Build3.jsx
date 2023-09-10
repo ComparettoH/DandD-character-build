@@ -10,7 +10,7 @@ function Build3 (){
     }, [])
 
     const getRace = () => {
-        dispatch({type: 'FETCH_Race'})
+        dispatch({type: 'FETCH_RACE'})
     }
     console.log(race)
 
