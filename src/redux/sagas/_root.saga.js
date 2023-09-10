@@ -4,6 +4,8 @@ import registrationSaga from './registration.saga';
 import userSaga from './user.saga';
 import genderSaga from './gender.saga';
 import raceSaga from './race.saga';
+import classSaga from './class.saga';
+import backgroundSaga from './background.saga'
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -19,5 +21,7 @@ export default function* rootSaga() {
     userSaga(),
     genderSaga(),
     raceSaga(),
+    classSaga(),
+    backgroundSaga(),
   ]);
 }
