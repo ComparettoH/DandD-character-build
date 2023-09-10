@@ -1,5 +1,6 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, {useEffect} from 'react';
+import { Character } from '../Character/Character';
 
 function CharacterList (){
     const dispatch = useDispatch();
@@ -15,7 +16,13 @@ function CharacterList (){
     console.log(charList)
 
     return(
+        <div id='user-list'>
         <h1>Hooray in Character List</h1>
+        {charList.map((char, index) => 
+        <span key={index}>
+            <Character char={char} />
+        </span>)}
+        </div>
     )
 }
 
