@@ -13,7 +13,7 @@ function CharacterList (){
     const getCharList = () => {
         dispatch({type: 'FETCH_CHARLIST'})
     }
-    console.log(charList)
+    // console.log(charList)
 
     return(
         <div id='user-list'>

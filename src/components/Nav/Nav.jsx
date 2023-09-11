@@ -28,6 +28,14 @@ function Nav() {
               Home
             </Link>
 
+            <Link className="navLink" to="/character-build-1">
+              Create New Character
+            </Link>
+
+            <Link className="navLink" to="/character-list">
+              Character List
+            </Link>
+
             <Link className="navLink" to="/info">
               Info Page
             </Link>

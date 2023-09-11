@@ -72,6 +72,10 @@ function App() {
             <UserPage />
           </ProtectedRoute>
 
+          <ProtectedRoute exact path="/character-list">
+          <CharacterList />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
@@ -81,14 +85,8 @@ function App() {
           </ProtectedRoute>
           
           {/* Note - all of these routes will need to be protected eventually!!! */}
-          {/* User Homepage */}
-          <Route exact path="/home">
-         
-          </Route>
-          {/* User Character List */}
-          <Route exact path="/character-list">
-          <CharacterList />
-          </Route>
+    
+
           {/* User Edit View */}
           <Route exact path="/character-edit">
           <CharacterEdit />

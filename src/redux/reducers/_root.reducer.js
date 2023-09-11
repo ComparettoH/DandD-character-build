@@ -6,6 +6,7 @@ import race from './race.reducer';
 import classR from './class.reducer'
 import background from './background.reducer'
 import charList from './charlist.reducer'
+import newChar from './newChar.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -21,6 +22,8 @@ const rootReducer = combineReducers({
   classR,
   background,
   charList,
+  newChar,
+  
 });
 
 export default rootReducer;

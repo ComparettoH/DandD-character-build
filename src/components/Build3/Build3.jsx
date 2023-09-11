@@ -15,7 +15,7 @@ function Build3 (){
     console.log(race)
 
     return(
-        <h1>Hooray in Character Build Step 3!</h1>
+        <h1>Step 2: Pick a race for your character!</h1>
     )
 }
 
