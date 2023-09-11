@@ -5,7 +5,7 @@ import {useHistory} from 'react-router-dom';
 
 function Build1 (){
     const dispatch = useDispatch();
-    const history = useHistory()
+    const history = useHistory();
     const [newCharName, setNewCharName] = useState('')
     const newChar = useSelector( store => store.newChar)
 

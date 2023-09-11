@@ -1,8 +1,10 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, {useEffect, useState} from 'react';
+import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
 
 function Build3 (){
     const dispatch = useDispatch();
+    const history = useHistory();
     const race = useSelector(store => store.race)
     const [description, setDescription] = useState([])
     const [newCharRace, setNewCharRace] = useState(Number(''))
