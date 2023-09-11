@@ -23,7 +23,7 @@ function Build1 (){
     };
 
     console.log("in build stage 1", newChar)
-    console.log('submit', newCharName)
+    // console.log('submit', newCharName)
     return(
         <div>
         <h1>Step 1: Enter Character's Name</h1>
