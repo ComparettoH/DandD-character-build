@@ -14,6 +14,7 @@ const raceRouter = require('./routes/race.router')
 const classRouter = require('./routes/class.router')
 const backgroundRouter = require('./routes/background.router')
 const charlistRouter = require('./routes/charlist.route')
+const characterRouter = require('./routes/character.router')
 
 // Body parser middleware
 app.use(bodyParser.json());
@@ -33,6 +34,7 @@ app.use('/api/race', raceRouter);
 app.use('/api/class', classRouter);
 app.use('/api/background', backgroundRouter);
 app.use('/api/charlist', charlistRouter)
+app.use('/api/character', characterRouter)
 
 // Serve static files
 app.use(express.static('build'));
