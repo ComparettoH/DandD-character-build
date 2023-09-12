@@ -1,9 +1,16 @@
 import { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
 export function Character({char}) {
+    const history = useHistory();
    
+    const goToEdit = () => {
+        history.push('/character-edit')
+    }
 
-
+    const goToDelete = () => {
+        history.push('/character-delete')
+    }
 
     return (
         <div key={char.id}>
@@ -13,10 +20,12 @@ export function Character({char}) {
              <p>{char.background}</p>
              <p>{char.character_backstory}</p>
             {/* add functionality!!! */}
-            <button>
+            <button onClick={goToEdit}>
                 Edit
-                </button> <button>
-                    Remove</button>
+            </button> 
+            <button onClick={goToDelete}>
+               Remove
+            </button>
         </div>
 
     )

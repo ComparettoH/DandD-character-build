@@ -1,5 +1,6 @@
 const express = require('express');
 const pool = require('../modules/pool');
+const {rejectUnauthenticated} = require('../modules/authentication-middleware');
 
 const router = express.Router();
   
@@ -30,5 +31,16 @@ const router = express.Router();
       res.sendStatus(403);
     }
   })
+
+// DELETE to remove a character from database list
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  const queryText = `DELETE FROM "character_list" WHERE (user_id=$1 AND id=$2);`;
+  pool.query(queryText, [req.params.id, req.user.id])
+  .then(() => { res.sendStatus(200) })
+  .catch((err) => {
+    console.log('Error completing DELETE character list query', err)
+    res.sendStatus(500);
+  })
+})
 
   module.exports = router;

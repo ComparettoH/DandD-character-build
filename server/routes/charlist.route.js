@@ -79,15 +79,15 @@ router.put('/', rejectUnauthenticated, (req, res) => {
 })
 
 // DELETE to remove a character from database list
-router.delete('/:id', rejectUnauthenticated, (req, res) => {
-  const queryText = `DELETE FROM "character_list" WHERE id=$1;`;
-  pool.query(queryText, [req.params.id])
-  .then(() => { res.sendStatus(200) })
-  .catch((err) => {
-    console.log('Error completing DELETE character list query', err)
-    res.sendStatus(500);
-  })
-})
+// router.delete('/:id', rejectUnauthenticated, (req, res) => {
+//   const queryText = `DELETE FROM "character_list" WHERE id=$1;`;
+//   pool.query(queryText, [req.params.id])
+//   .then(() => { res.sendStatus(200) })
+//   .catch((err) => {
+//     console.log('Error completing DELETE character list query', err)
+//     res.sendStatus(500);
+//   })
+// })
 
 
 module.exports = router;

@@ -13,8 +13,19 @@ function* fetchCharList() {
   }
 }
 
+function* AddChar (action) {
+  try {
+    yield axios.post('/api/charlist', action.payload)
+    yield put({ type: 'FETCH_CHARLIST'})
+  }
+  catch (error) {
+    console.log('User character POST request failed', error)
+  }
+}
+
 function* charListSaga() {
   yield takeLatest('FETCH_CHARLIST', fetchCharList);
+  yield takeLatest('ADD_CHAR', AddChar)
 }
 
 export default charListSaga;
