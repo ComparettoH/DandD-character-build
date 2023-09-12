@@ -4,8 +4,14 @@ const newCharReducer = (state = [], action) => {
             return [...state, action.payload];
         case 'ADD_RACE':
             return [...state, action.payload];
+        case 'ADD_CLASS':
+            return [...state, action.payload];
+        case 'ADD_BACKGROUND':
+            return [...state, action.payload];
+        case 'ADD_BACKSTORY':
+            return [...state, action.payload];
         case 'ADD_CHAR':
-            return []
+                return state;
         default:
             return state;
     }

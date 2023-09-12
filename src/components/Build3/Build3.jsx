@@ -46,7 +46,7 @@ function Build3 (){
                     <p>
                     {description}
                     </p>
-                 {/* add functionality!!! */}
+               
             <button onClick={addRace}>
                 Next Step
             </button> 
