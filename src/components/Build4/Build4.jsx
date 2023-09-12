@@ -13,9 +13,9 @@ function Build4 (){
         getClassList();
         }, [])
     
-        const getClassList = () => {
-            dispatch({type: 'FETCH_CLASS'})
-        }
+     const getClassList = () => {
+        dispatch({type: 'FETCH_CLASS'})
+    }
 
     const handleClick = (oneClass) => {
         console.log('in handleClick', oneClass.description)
