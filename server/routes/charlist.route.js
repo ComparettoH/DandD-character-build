@@ -7,7 +7,7 @@ const router = express.Router();
 // GET for logged in user's character list
 router.get('/', (req, res) => {
   if (req.isAuthenticated()){
-    const queryText = `SELECT "character_name", "character_race"."race", "character_class"."class", "character_background"."background", "character_backstory" FROM "character_list"
+    const queryText = `SELECT "character_list"."id","character_name", "character_race"."race", "character_class"."class", "character_background"."background", "character_backstory" FROM "character_list"
     JOIN "character_race" ON "character_race"."id" = "character_list"."character_race"
     JOIN "character_class" ON "character_class"."id" = "character_list"."character_class"
     JOIN "character_background" ON "character_background"."id" = "character_list"."character_background"
@@ -79,15 +79,15 @@ router.put('/', rejectUnauthenticated, (req, res) => {
 })
 
 // DELETE to remove a character from database list
-// router.delete('/:id', rejectUnauthenticated, (req, res) => {
-//   const queryText = `DELETE FROM "character_list" WHERE id=$1;`;
-//   pool.query(queryText, [req.params.id])
-//   .then(() => { res.sendStatus(200) })
-//   .catch((err) => {
-//     console.log('Error completing DELETE character list query', err)
-//     res.sendStatus(500);
-//   })
-// })
+router.delete('/:id', rejectUnauthenticated, (req, res) => {
+  const queryText = `DELETE FROM "character_list" WHERE id=$1;`;
+  pool.query(queryText, [req.params.id])
+  .then(() => { res.sendStatus(200) })
+  .catch((err) => {
+    console.log('Error completing DELETE character list query', err)
+    res.sendStatus(500);
+  })
+})
 
 
 module.exports = router;

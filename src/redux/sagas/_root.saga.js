@@ -7,6 +7,7 @@ import raceSaga from './race.saga';
 import classSaga from './class.saga';
 import backgroundSaga from './background.saga'
 import charListSaga from './charlist.saga';
+import charSaga from './indivChar.saga';
 
 // rootSaga is the primary saga.
 // It bundles up all of the other sagas so our project can use them.
@@ -25,5 +26,6 @@ export default function* rootSaga() {
     classSaga(),
     backgroundSaga(),
     charListSaga(),
+    charSaga(),
   ]);
 }

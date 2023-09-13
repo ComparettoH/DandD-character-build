@@ -1,18 +1,29 @@
 import { useState } from 'react';
 import {useHistory} from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+
 
 export function Character({char}) {
     const history = useHistory();
+    const dispatch = useDispatch();
+    const [charId, setCharId] = useState(Number(''))
    
     const goToEdit = () => {
         history.push('/character-edit')
     }
 
-    const goToDelete = () => {
-        history.push('/character-delete')
+    const handleDelete = (char) => {
+        setCharId
+        history.push(`/character-delete`)
+        console.log({char})
+        dispatch({
+            type: 'REMOVE_CHAR',
+            payload: char
+        })
     }
 
     return (
+
         <div key={char.id}>
              <h1>{char.character_name}</h1>
              <p>{char.race}</p>
@@ -23,7 +34,7 @@ export function Character({char}) {
             <button onClick={goToEdit}>
                 Edit
             </button> 
-            <button onClick={goToDelete}>
+            <button onClick={() => handleDelete(char)}>
                Remove
             </button>
         </div>

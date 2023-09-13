@@ -1,6 +1,6 @@
 const indivCharReducer = (state = [], action) => {
     switch (action.type) {
-        case 'FETCH_CHAR':
+        case 'SET_CHAR':
             return action.payload;
         case 'DELETE_CHAR':
             return action.payload;

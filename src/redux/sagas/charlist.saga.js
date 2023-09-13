@@ -23,9 +23,21 @@ function* AddChar (action) {
   }
 }
 
+function* deleteChar (action) {
+  try {
+      yield axios.delete(`/api/charlist/${action.payload}`)
+      console.log('in sagaCharList,', action.payload)
+      yield put({ type: 'REMOVE_CHAR'})
+  }
+  catch (error) {
+      console.log('User character DELETE request failed', error)
+  }
+}
+
 function* charListSaga() {
   yield takeLatest('FETCH_CHARLIST', fetchCharList);
   yield takeLatest('ADD_CHAR', AddChar)
+  yield takeLatest('DELETE_CHAR', deleteChar)
 }
 
 export default charListSaga;

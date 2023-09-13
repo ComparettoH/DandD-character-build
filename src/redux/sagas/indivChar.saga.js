@@ -4,9 +4,10 @@ import { put, takeLatest } from 'redux-saga/effects';
 //still need to secure
 function* fetchChar() {
   try {
-    const charResponse = yield axios.get('/api/character');
+    const charResponse = yield axios.get(`/api/character/:id`);
     console.log('in sagaCharList,', charResponse)
-    yield put({ type: 'SET_CHARLIST', payload: charResponse.data });
+    yield put({ type: 'SET_CHAR',
+  payload: charResponse.data });
   }
   catch (error) {
     console.log('User character GET request failed', error);
@@ -14,19 +15,19 @@ function* fetchChar() {
 }
 
 //still need to secure
-function* deleteChar () {
-    try {
-        yield axios.delete('/api/character/:id')
-        yield put({ type: 'REMOVE_CHAR'})
-    }
-    catch (error) {
-        console.log('User character DELETE request failed', error)
-    }
-}
+// function* deleteChar () {
+//     try {
+//         yield axios.delete('/api/character/:id')
+//         yield put({ type: 'REMOVE_CHAR'})
+//     }
+//     catch (error) {
+//         console.log('User character DELETE request failed', error)
+//     }
+// }
 
 function* charSaga() {
   yield takeLatest('FETCH_CHAR', fetchChar);
-  yield takeLatest('DELETE_CHAR', deleteChar)
+  // yield takeLatest('DELETE_CHAR', deleteChar)
 }
 
 export default charSaga;
