@@ -1,42 +1,36 @@
-import { useState } from 'react';
+import { Fragment, useState } from 'react';
 import {useHistory} from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
+import React, { useEffect } from 'react';
 
 
-export function Character({char}) {
+export function Character() {
     const history = useHistory();
     const dispatch = useDispatch();
     const [charId, setCharId] = useState(Number(''))
-   
-    const goToEdit = () => {
-        history.push('/character-edit')
-    }
+   const indivChar = useSelector(store => store.indivChar)
+   const [indivChar1, setIndivChar1] = useState([]);
 
-    const handleDelete = (char) => {
-        setCharId
-        history.push(`/character-delete`)
-        console.log({char})
-        dispatch({
-            type: 'REMOVE_CHAR',
-            payload: char
-        })
+    
+
+    useEffect(() => {
+    getChar();
+    }, [])
+    
+    const getChar = () => {
+        dispatch({type: 'FETCH_CHAR'})
     }
 
     return (
 
-        <div key={char.id}>
-             <h1>{char.character_name}</h1>
-             <p>{char.race}</p>
-             <p>{char.class}</p>
-             <p>{char.background}</p>
-             <p>{char.character_backstory}</p>
-            {/* add functionality!!! */}
-            <button onClick={goToEdit}>
-                Edit
-            </button> 
-            <button onClick={() => handleDelete(char)}>
-               Remove
-            </button>
+        <div id="one-character">
+            <h1>In Character !!!!</h1>
+            <span>
+            {indivChar1.map((char) =>
+            <Fragment key={char.id}>
+            <h1>{char.character_name}</h1>
+            </Fragment>)}
+            </span>
         </div>
 
     )

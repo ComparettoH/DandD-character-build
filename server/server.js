@@ -13,7 +13,7 @@ const genderRouter = require('./routes/gender.router')
 const raceRouter = require('./routes/race.router')
 const classRouter = require('./routes/class.router')
 const backgroundRouter = require('./routes/background.router')
-const charlistRouter = require('./routes/charlist.route')
+const charlistRouter = require('./routes/charlist.router')
 const characterRouter = require('./routes/character.router')
 
 // Body parser middleware

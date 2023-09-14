@@ -20,7 +20,11 @@ function CharacterList (){
 
    
     const goToEdit = (char) => {
-        history.push('/character-edit')
+        history.push(`/character/${char.id}`)
+        dispatch({
+            type: 'FETCH_CHAR',
+            payload: char.id
+        })
     }
 
     const handleDelete = (char) => {
@@ -37,7 +41,6 @@ function CharacterList (){
         <span>
         {charList.map((char) => 
         <Fragment key={char.id}>
-            {/* <Character char={char} /> */}
             <h1>{char.character_name}</h1>
             <p>{char.race}</p>
             <p>{char.class}</p>

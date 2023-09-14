@@ -21,8 +21,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
+import { Character } from '../Character/Character';
 import CharacterList from '../CharacterList/CharacterList';
-import CharacterEdit from '../CharacterEdit/CharacterEdit';
 import CharacterDelete from '../CharacterDelete/CharacterDelete';
 import Build1 from '../Build1/Build1';
 import Build2 from '../Build2/Build2';
@@ -88,8 +88,8 @@ function App() {
     
 
           {/* User Edit View */}
-          <Route exact path="/character-edit">
-          <CharacterEdit />
+          <Route  path="/character">
+          <Character />
           </Route>
           {/* User Delete View */}
           <Route exact path="/character-delete">

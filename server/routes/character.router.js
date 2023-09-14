@@ -7,16 +7,15 @@ const router = express.Router();
   // GET for single character
   router.get('/:id', (req, res) => {
     if (req.isAuthenticated()){
-      const user = req.user.id
       const charId = req.params.id;
-      const queryText = `SELECT "character_name", "character_race"."race", "character_class"."class", "character_background"."background", "character_backstory" FROM "character_list"
+      const queryText = `SELECT "character_list"."id", "character_name", "character_race"."race", "character_class"."class", "character_background"."background", "character_backstory" FROM "character_list"
       JOIN "character_race" ON "character_race"."id" = "character_list"."character_race"
       JOIN "character_class" ON "character_class"."id" = "character_list"."character_class"
       JOIN "character_background" ON "character_background"."id" = "character_list"."character_background"
-      WHERE ("character_list"."user_id"=$1 AND "character_list"."id"=$2);`
+      WHERE "character_list"."id"=$1;`
   
       const queryValues = [
-        user, charId
+         charId
       ]
       pool.query(queryText, queryValues)
       .then( (result) => {

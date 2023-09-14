@@ -2,10 +2,12 @@ import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
 //still need to secure
-function* fetchChar() {
+function* fetchChar(action) {
   try {
+    
     const charResponse = yield axios.get(`/api/character/:id`);
-    console.log('in sagaCharList,', charResponse)
+    console.log('charResponse:', charResponse);
+    console.log('in saga fetchCHAR,', charResponse.data)
     yield put({ type: 'SET_CHAR',
   payload: charResponse.data });
   }
@@ -14,20 +16,8 @@ function* fetchChar() {
   }
 }
 
-//still need to secure
-// function* deleteChar () {
-//     try {
-//         yield axios.delete('/api/character/:id')
-//         yield put({ type: 'REMOVE_CHAR'})
-//     }
-//     catch (error) {
-//         console.log('User character DELETE request failed', error)
-//     }
-// }
-
 function* charSaga() {
   yield takeLatest('FETCH_CHAR', fetchChar);
-  // yield takeLatest('DELETE_CHAR', deleteChar)
 }
 
 export default charSaga;
