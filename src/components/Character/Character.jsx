@@ -36,9 +36,35 @@ export function Character() {
     return (
 
         <div id="one-character">
-            <h1>In Character !!!!</h1>
-            <span>
-            </span>
+            <h1>Edit Character</h1>
+            <form onSubmit={handleSubmit}>
+                <span>
+                {character.map((infoInDB) =>
+                <Fragment key={infoInDB.id}>
+                    <h2>Current Name: {infoInDB.character_name}</h2>
+                    <input
+                    value={charToEdit.character_name}
+                    placeholder={infoInDB.character_name}
+                    ></input>
+                    <p>Current Race: {infoInDB.race}</p>
+                    <input key={infoInDB.id}
+                    value={charToEdit.race}
+                    placeholder='Character`s new race'></input>
+                    <p>Current Class: {infoInDB.class}</p>
+                    <input key={infoInDB.id}
+                    value={charToEdit.class}
+                    placeholder='Character`s new class'></input>
+                    <p>Current Background: {infoInDB.background}</p>
+                    <input key={infoInDB.id}
+                    value={charToEdit.background}
+                    placeholder='Character`s new background'></input>
+                    <p>Current Backstory: {infoInDB.character_backstory}</p>
+                    <input key={infoInDB.id}
+                    value={charToEdit.character_backstory}
+                    placeholder='Character`s new backstory'></input>
+                </Fragment>)}
+                </span>
+            </form>
         </div>
 
     )
