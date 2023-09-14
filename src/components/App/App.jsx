@@ -21,9 +21,8 @@ import InfoPage from '../InfoPage/InfoPage';
 import LandingPage from '../LandingPage/LandingPage';
 import LoginPage from '../LoginPage/LoginPage';
 import RegisterPage from '../RegisterPage/RegisterPage';
-import { Character } from '../Character/Character';
 import CharacterList from '../CharacterList/CharacterList';
-import CharacterDelete from '../CharacterDelete/CharacterDelete';
+import { Character } from '../Character/Character';
 import Build1 from '../Build1/Build1';
 import Build2 from '../Build2/Build2';
 import Build3 from '../Build3/Build3';
@@ -76,6 +75,10 @@ function App() {
           <CharacterList />
           </ProtectedRoute>
 
+          <ProtectedRoute path="/character">
+          <Character />
+          </ProtectedRoute>
+
           <ProtectedRoute
             // logged in shows InfoPage else shows LoginPage
             exact
@@ -87,14 +90,7 @@ function App() {
           {/* Note - all of these routes will need to be protected eventually!!! */}
     
 
-          {/* User Edit View */}
-          <Route  path="/character">
-          <Character />
-          </Route>
-          {/* User Delete View */}
-          <Route exact path="/character-delete">
-          <CharacterDelete />
-          </Route>
+         
           {/* User Character Build step 1 */}
           <Route exact path="/character-build-1">
           <Build1 />

@@ -8,8 +8,27 @@ export function Character() {
     const history = useHistory();
     const dispatch = useDispatch();
     const character = useSelector(store => store.character)
+    const charToEdit = useSelector(store => store.charToEdit)
 
-    
+    const handleUpdate = (event, changeProperty) => {
+        dispatch({
+            type: 'EDIT_NAME',
+            payload: {
+                property: changeProperty, // character_name
+                value: event.target.value // Name
+            }
+        })
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'SUBMIT_EDIT_STUDENT',
+            payload: charToEdit
+        })
+
+        history.push('/character-list')
+    }
 
         // console.log('testing', charList)
         console.log('testing', character)

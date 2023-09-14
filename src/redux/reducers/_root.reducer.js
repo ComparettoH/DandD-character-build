@@ -8,6 +8,7 @@ import background from './background.reducer'
 import charList from './charlist.reducer'
 import newChar from './newChar.reducer';
 import character from './character.reducer';
+import charToEdit from './editChar.reducer';
 
 // rootReducer is the primary reducer for our entire project
 // It bundles up all of the other reducers so our project can use them.
@@ -25,6 +26,7 @@ const rootReducer = combineReducers({
   charList,
   newChar,
   character,
+  charToEdit,
   
 });
 

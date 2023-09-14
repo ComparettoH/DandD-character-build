@@ -23,3 +23,5 @@ const charToEdit = (state  = {}, action) => {
     }
     return state;
 }
+
+export default charToEdit;
