@@ -1,7 +1,6 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-//still need to secure
 function* fetchCharList() {
   try {
     const charListResponse = yield axios.get('/api/charlist');

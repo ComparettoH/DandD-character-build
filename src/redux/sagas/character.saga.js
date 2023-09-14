@@ -1,13 +1,11 @@
 import axios from 'axios';
 import { put, takeLatest } from 'redux-saga/effects';
 
-//still need to secure
 function* fetchChar(action) {
   try {
-    
-    const charResponse = yield axios.get(`/api/character/:id`);
-    console.log('charResponse:', charResponse);
-    console.log('in saga fetchCHAR,', charResponse.data)
+    const charResponse = yield axios.get(`/api/character/${action.payload}`);
+    console.log('in fetchChar', action.payload)
+    console.log('in indivChar saga,', charResponse.data)
     yield put({ type: 'SET_CHAR',
   payload: charResponse.data });
   }

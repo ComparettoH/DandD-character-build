@@ -1,6 +1,8 @@
-const indivCharReducer = (state = [], action) => {
+const characterReducer = (state = [], action) => {
     switch (action.type) {
         case 'SET_CHAR':
+            return action.payload;
+        case 'FETCH_CHAR':
             return action.payload;
         case 'CHANGE_CHAR':
             return action.payload;
@@ -9,4 +11,4 @@ const indivCharReducer = (state = [], action) => {
     }
   };
   
-  export default indivCharReducer;
+  export default characterReducer;
