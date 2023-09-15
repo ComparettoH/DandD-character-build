@@ -5,7 +5,7 @@ function* fetchChar(action) {
   try {
     const charResponse = yield axios.get(`/api/character/${action.payload}`);
     console.log('in fetchChar', action.payload)
-    console.log('in indivChar saga,', charResponse.data)
+    console.log('in indivChar saga,', charResponse)
     yield put({ type: 'SET_CHAR',
   payload: charResponse.data });
   }

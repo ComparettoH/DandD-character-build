@@ -10,7 +10,16 @@ export function Character() {
     const character = useSelector(store => store.character)
     const charToEdit = useSelector(store => store.charToEdit)
 
+    // useEffect(() => {
+    //     getChar();
+    //     }, [])
+    
+    //     const getChar = () => {
+    //         dispatch({type: 'FETCH_CHAR'})
+    //     }
+
     const handleUpdate = (event, changeProperty) => {
+        event.preventDefault();
         dispatch({
             type: 'EDIT_NAME',
             payload: {
@@ -36,39 +45,39 @@ export function Character() {
     console.log('testing', character)
 
     return (
-
         <div id="one-character">
             <h1>Edit Character</h1>
+            <span>
             <form onSubmit={handleSubmit}>
-                <span>
                 {character.map((infoInDB) =>
                 <Fragment key={infoInDB.id}>
                     <h2>Current Name: {infoInDB.character_name}</h2>
-                    <input key={infoInDB.id}
+                    <input key={infoInDB.name}
                     value={charToEdit.character_name}
                     placeholder={infoInDB.character_name}
+                    onChange={(event) => handleUpdate()}
                     ></input>
                     <p>Current Race: {infoInDB.race}</p>
-                    <input key={infoInDB.id}
+                    <input key={infoInDB.race}
                     value={charToEdit.race}
-                    placeholder='Character`s new race'></input>
+                    placeholder={infoInDB.race}></input>
                     <p>Current Class: {infoInDB.class}</p>
-                    <input key={infoInDB.id}
+                    <input key={infoInDB.class}
                     value={charToEdit.class}
-                    placeholder='Character`s new class'></input>
+                    placeholder={infoInDB.class}></input>
                     <p>Current Background: {infoInDB.background}</p>
-                    <input key={infoInDB.id}
+                    <input key={infoInDB.background}
                     value={charToEdit.background}
-                    placeholder='Character`s new background'></input>
+                    placeholder={infoInDB.background}></input>
                     <p>Current Backstory: {infoInDB.character_backstory}</p>
-                    <input key={infoInDB.id}
+                    <textarea key={infoInDB.character_backstory}
                     value={charToEdit.character_backstory}
-                    placeholder='Character`s new backstory'></input>
+                    placeholder={infoInDB.character_backstory}/>
                 </Fragment>)}
                 <button type='submit'>Update Character</button>
                 <button onClick={cancelEdit}>Cancel</button>
-                </span>
             </form>
+            </span>
         </div>
 
     )
