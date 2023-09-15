@@ -26,7 +26,6 @@ export function Character() {
             type: 'SUBMIT_EDIT_STUDENT',
             payload: charToEdit
         })
-
         history.push('/character-list')
     }
 

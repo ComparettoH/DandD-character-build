@@ -29,7 +29,6 @@ import Build3 from '../Build3/Build3';
 import Build4 from '../Build4/Build4';
 import Build5 from '../Build5/Build5';
 import Build6 from '../Build6/Build6';
-import Build7 from '../Build7/Build7';
 import CharacterReview from '../CharacterReview/CharacterReview';
 
 
@@ -114,10 +113,6 @@ function App() {
           {/* User Character Build step 6 */}
           <Route exact path="/character-build-6">
           <Build6 />
-          </Route>
-          {/* User Character Build step 7 */}
-          <Route exact path="/character-build-7">
-          <Build7 />
           </Route>
           {/* User Character Build Review/Confirmation */}
           <Route exact path="/character-review">

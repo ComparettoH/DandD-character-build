@@ -12,12 +12,24 @@ function Build6 (){
         setNewCharBS(event.target.value)
     }
 
-    const addBackStory = () => {
+
+
+    const addBackStory = (event) => {
+        event.preventDefault();
         dispatch({
             type: 'ADD_BACKSTORY',
             payload: newCharBS
         })
-        // may need a second dispatch that submits the final form of the character to complete POST 
+    }
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'ADD_CHAR',
+            payload: newChar
+        })
+        console.log('testing submission', newChar)
+        
         history.push('/character-review')
     }
 
@@ -25,6 +37,7 @@ function Build6 (){
         <div id='step-5'>
         <h1>Step 5: Enter any backstory your character may have!
         </h1>
+        <form onSubmit={handleSubmit}>
         <textarea value={newCharBS} onChange={enterBackStory} placeholder='Enter backstory, questions for your DM, and/or thoughts here'/>
         {/* possibly create prompt button if stretch/time allows */}
         <ul>Prompt ideas:
@@ -34,6 +47,7 @@ function Build6 (){
         </ul>
         <button>Randomize</button>
         <button onClick={addBackStory}>Next Step</button>
+        </form>
         </div>
     )
 }
