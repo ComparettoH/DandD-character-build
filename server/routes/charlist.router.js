@@ -28,18 +28,20 @@ router.get('/', (req, res) => {
 
 //POST to add a new character
 router.post('/', rejectUnauthenticated,(req, res) => {
+  const userId = req.user.id
   const newChar = req.body;
-
+  console.log('in charlist post', req.body[0], req.body[1], req.body[2], req.body[3], req.body[4], req.body[5])
+  console.log([req.user.id])
   const queryText = `INSERT INTO "character_list"(
     "user_id", "character_name", "character_race", "character_class", "character_background", "character_backstory")
     VALUES ($1, $2, $3, $4, $5, $6);`;
     const queryValues = [
-      newChar.user_id,
-      newChar.character_name,
-      newChar.character_race,
-      newChar.character_class,
-      newChar.character_background,
-      newChar.character_backstory,
+      userId,
+      newChar[0],
+      newChar[1],
+      newChar[2],
+      newChar[3],
+      newChar[4],
     ];
     pool.query(queryText, queryValues)
     .then(() => { res.sendStatus(201) })

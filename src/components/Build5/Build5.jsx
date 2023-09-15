@@ -19,7 +19,6 @@ function Build5 (){
     }
 
     const handleClick = (oneBG) => {
-        console.log('in handleClick', oneBG.description)
         setDescription(oneBG.description)
         setNewCharBackG(oneBG.id)
      }

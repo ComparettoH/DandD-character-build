@@ -18,7 +18,6 @@ function Build4 (){
     }
 
     const handleClick = (oneClass) => {
-        console.log('in handleClick', oneClass.description)
         setDescription(oneClass.description)
         setNewCharClass(oneClass.id)
      }

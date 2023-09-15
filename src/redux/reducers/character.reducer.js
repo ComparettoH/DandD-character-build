@@ -1,18 +1,9 @@
 const characterReducer = (state = [], action) => {
     switch (action.type) {
         case 'FETCH_CHAR':
-            return {
-                ...state,
-                loading: true,
-                error: null
-            };
+            return action.payload
         case 'SET_CHAR':
-            return {
-                ...state,
-                char: action.payload,
-                loading: false,
-                error: null
-            };
+            return  action.payload
         case 'CHANGE_CHAR':
             return action.payload;
         default:

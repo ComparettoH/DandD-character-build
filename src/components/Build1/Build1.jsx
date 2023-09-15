@@ -10,10 +10,12 @@ function Build1 (){
     const newChar = useSelector( store => store.newChar)
 
     const enterName = (event) => {
+        event.preventDefault();
         setNewCharName(event.target.value)
     }
 
-    const addName = () => {
+    const addName = (event) => {
+        event.preventDefault();
         dispatch({
             type: 'ADD_NAME',
             payload: newCharName
@@ -22,17 +24,18 @@ function Build1 (){
         history.push('/character-build-3')
     };
 
-    console.log("in build stage 1", newChar)
     // console.log('submit', newCharName)
     return(
         <div id="step-1">
         <h1>Step 1: Enter Character's Name</h1>
+        <form>
         <input
         type='text'
         value={newCharName}
         onChange={enterName}></input>
         <button>Randomize</button>
         <button onClick={addName}>Next Step</button>
+        </form>
         </div>
     )
 }

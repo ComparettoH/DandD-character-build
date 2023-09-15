@@ -14,6 +14,7 @@ function* fetchCharList() {
 
 function* AddChar (action) {
   try {
+    console.log(action.payload)
     yield axios.post('/api/charlist', action.payload)
     yield put({ type: 'FETCH_CHARLIST'})
   }
@@ -27,6 +28,7 @@ function* deleteChar (action) {
       yield axios.delete(`/api/charlist/${action.payload}`)
       console.log('in sagaCharList,', action.payload)
       yield put({ type: 'REMOVE_CHAR'})
+      yield put({ type: 'FETCH_CHARLIST'})
   }
   catch (error) {
       console.log('User character DELETE request failed', error)

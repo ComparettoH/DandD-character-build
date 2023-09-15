@@ -19,7 +19,6 @@ function Build3 (){
     }
 
     const handleClick = (oneRace) => {
-       console.log('in handleClick', oneRace.description)
        setDescription(oneRace.description)
        setNewCharRace(oneRace.id)
     }
