@@ -29,8 +29,11 @@ export function Character() {
         history.push('/character-list')
     }
 
-        // console.log('testing', charList)
-        console.log('testing', character)
+    const cancelEdit = () => {
+        history.push('/character-list');
+    }
+    // console.log('testing', charList)
+    console.log('testing', character)
 
     return (
 
@@ -41,7 +44,7 @@ export function Character() {
                 {character.map((infoInDB) =>
                 <Fragment key={infoInDB.id}>
                     <h2>Current Name: {infoInDB.character_name}</h2>
-                    <input
+                    <input key={infoInDB.id}
                     value={charToEdit.character_name}
                     placeholder={infoInDB.character_name}
                     ></input>
@@ -62,6 +65,8 @@ export function Character() {
                     value={charToEdit.character_backstory}
                     placeholder='Character`s new backstory'></input>
                 </Fragment>)}
+                <button type='submit'>Update Character</button>
+                <button onClick={cancelEdit}>Cancel</button>
                 </span>
             </form>
         </div>
