@@ -24,7 +24,6 @@ import RegisterPage from '../RegisterPage/RegisterPage';
 import CharacterList from '../CharacterList/CharacterList';
 import { Character } from '../Character/Character';
 import Build1 from '../Build1/Build1';
-import Build2 from '../Build2/Build2';
 import Build3 from '../Build3/Build3';
 import Build4 from '../Build4/Build4';
 import Build5 from '../Build5/Build5';
@@ -93,10 +92,6 @@ function App() {
           {/* User Character Build step 1 */}
           <Route exact path="/character-build-1">
           <Build1 />
-          </Route>
-          {/* User Character Build step 2 */}
-          <Route exact path="/character-build-2">
-          <Build2 />
           </Route>
           {/* User Character Build step 3 */}
           <Route exact path="/character-build-3">

@@ -9,10 +9,10 @@ const charToEdit = (state  = {}, action) => {
             ...state,
             // 'first_name'
             // or 'last_name'
-            [action.payload.property]: action.payload.value
+            [action.payload.character_name]: action.payload.value
             // cohort: 'Diamon'
         }
-
+    
         /**
          * return {
          *    ...state,
@@ -20,6 +20,42 @@ const charToEdit = (state  = {}, action) => {
          * }
          */
 
+    }
+    if (action.type === 'EDIT_RACE') {
+        return {
+            ...state,
+            // 'first_name'
+            // or 'last_name'
+            [action.payload.character_race]: action.payload.value
+            // cohort: 'Diamon'
+        }
+    }
+    if (action.type === 'EDIT_CLASS') {
+        return {
+            ...state,
+            // 'first_name'
+            // or 'last_name'
+            [action.payload.character_class]: action.payload.value
+            // cohort: 'Diamon'
+        }
+    }
+    if (action.type === 'EDIT_BACKGROUND') {
+        return {
+            ...state,
+            // 'first_name'
+            // or 'last_name'
+            [action.payload.character_background]: action.payload.value
+            // cohort: 'Diamon'
+        }
+    }
+    if (action.type === 'EDIT_BACKSTORY') {
+        return {
+            ...state,
+            // 'first_name'
+            // or 'last_name'
+            [action.payload.character_backstory]: action.payload.value
+            // cohort: 'Diamon'
+        }
     }
     return state;
 }

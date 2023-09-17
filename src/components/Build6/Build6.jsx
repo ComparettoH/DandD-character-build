@@ -13,26 +13,23 @@ function Build6 (){
         setNewCharBS(event.target.value)
     }
 
-    // const addBackStory = (event) => {
-    //     event.preventDefault();
-    //     dispatch({
-    //         type: 'ADD_BACKSTORY',
-    //         payload: newCharBS
-    //     })
-    // }
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        dispatch({
-            type: 'ADD_BACKSTORY',
-            payload: newCharBS
-        },
+        dispatch(
         {
             type: 'ADD_CHAR',
             payload: newChar
         })
         console.log('testing submission', newChar)
         history.push('/character-review')
+    }
+
+    const saveBackstory = (event) => {
+        event.preventDefault();
+        dispatch({
+            type: 'ADD_BACKSTORY',
+            payload: newCharBS
+        })
     }
 
     return(
@@ -47,8 +44,8 @@ function Build6 (){
             <li>What was you character's childhood like?</li>
             <li>How old is your character?</li>
         </ul>
-        <button>Randomize</button>
-        <button type='submit'>Save Character</button>
+        <button onClick={saveBackstory}>Save Backstory</button>
+        <button type='submit'>Submit Character</button>
         </form>
         </div>
     )
