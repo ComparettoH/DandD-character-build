@@ -1,7 +1,5 @@
 const characterReducer = (state = [], action) => {
     switch (action.type) {
-        case 'FETCH_CHAR':
-            return action.payload
         case 'SET_CHAR':
             return  action.payload
         case 'CHANGE_CHAR':

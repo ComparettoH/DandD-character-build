@@ -33,7 +33,6 @@ function Build1 (){
         type='text'
         value={newCharName}
         onChange={enterName}></input>
-        <button>Randomize</button>
         <button onClick={addName}>Next Step</button>
         </form>
         </div>

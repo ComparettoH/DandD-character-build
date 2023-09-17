@@ -6,8 +6,10 @@ function* fetchChar(action) {
     const charResponse = yield axios.get(`/api/character/${action.payload}`);
     console.log('in fetchChar', action.payload)
     console.log('in indivChar saga,', charResponse)
-    yield put({ type: 'SET_CHAR',
-  payload: charResponse.data });
+    yield put({
+      type: 'SET_CHAR',
+      payload: charResponse.data
+    });
   }
   catch (error) {
     console.log('User character GET request failed', error);
