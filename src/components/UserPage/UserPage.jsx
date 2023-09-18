@@ -20,8 +20,9 @@ const goToList = () => {
     <div className="container">
       <span className='Greeting'>
       <h1>Greetings, {user.username}!</h1>
-      <h4>Are you ready to begin a new adventure?</h4>
+      <img src="https://i.ibb.co/rQTg1XC/one-scroll.png" alt="one-scroll" border="0"/>
       </span>
+      <br></br>
       <button className="btn" onClick={goToBuild}>Create New Character</button>
       <button className="btn" onClick={goToList}>Saved Characters</button>
     </div>

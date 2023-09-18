@@ -23,4 +23,9 @@ text-align: center;
     cursor: pointer;
   }
 
+.container {
+color: white;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+text-align: center;
+}
 
