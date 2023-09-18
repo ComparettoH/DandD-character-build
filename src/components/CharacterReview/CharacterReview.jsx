@@ -14,9 +14,9 @@ function CharacterReview (){
 
     return(
         <div id='char-review'>
-        <img src="https://i.ibb.co/kJJ6jkj/bigger-scroll.jpg" alt="bigger-scroll" border="0"/>
-        <button className="btn" onClick={goToBuild}>Create Another Character</button>
-        <button className="btn" onClick={goToList}>Go To Saved Character List</button>
+       <img src="https://i.ibb.co/LCBrvqp/bigger-scroll.png" alt="bigger-scroll" border="0"/>
+        <button style={{color: 'black'}} className="btn" onClick={goToBuild}>Create Another Character</button>
+        <button style={{color: 'black'}} className="btn" onClick={goToList}>Go To Saved Character List</button>
         </div>
     )
 }
