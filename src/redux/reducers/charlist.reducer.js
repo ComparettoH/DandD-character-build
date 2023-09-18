@@ -3,7 +3,6 @@ const charListReducer = (state = [], action) => {
       case 'SET_CHARLIST':
         return action.payload;
       case 'ADD_CHAR':
-        console.log('in add char', action.payload)
         return action.payload;
       default:
         return state;

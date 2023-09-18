@@ -26,7 +26,7 @@ function* AddChar (action) {
 function* deleteChar (action) {
   try {
       yield axios.delete(`/api/charlist/${action.payload}`)
-      console.log('in sagaCharList,', action.payload)
+      console.log('in sagaCharList DELETE', action.payload)
       yield put({ type: 'REMOVE_CHAR'})
       yield put({ type: 'FETCH_CHARLIST'})
   }
@@ -35,10 +35,22 @@ function* deleteChar (action) {
   }
 }
 
+function* editChar (action) {
+  try {
+    console.log(`in sagaCharlist EDIT ${action.payload.id}`, action.payload)
+    yield axios.put(`api/charlist/${action.payload.id}`, action.payload);
+    yield put({ type: 'FETCH_CHARLIST'})
+  }
+  catch (error) {
+    console.log('User Character EDIT request failed', error)
+  }
+}
+
 function* charListSaga() {
   yield takeLatest('FETCH_CHARLIST', fetchCharList);
   yield takeLatest('ADD_CHAR', AddChar)
   yield takeLatest('DELETE_CHAR', deleteChar)
+  yield takeLatest('SUBMIT_EDIT_CHAR', editChar)
 }
 
 export default charListSaga;

@@ -1,13 +1,13 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, {Fragment, useEffect} from 'react';
-import { useState } from 'react';
 import {useHistory} from 'react-router-dom';
-
+import './CharacterList.css';
 
 function CharacterList (){
     const dispatch = useDispatch();
     const charList = useSelector(store => store.charList)
     const history = useHistory();
+    const user = useSelector((store) => store.user);
 
     useEffect(() => {
     getCharList();
@@ -19,11 +19,11 @@ function CharacterList (){
     // console.log(charList)
 
    
-    const goToEdit = (char) => {
+    function goToEdit (char) {
         history.push(`/character/${char.id}`)
         dispatch({
-            type: 'FETCH_CHAR',
-            payload: char.id
+            type: 'SET_EDIT_STUDENT',
+            payload: char
         })
     }
 
@@ -36,8 +36,22 @@ function CharacterList (){
     
 
     return(
-        <div id='user-list'>
-        <h1>Hooray in Character List</h1>
+        <>
+        <h1 style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%"
+          }}>{user.username}'s Character List</h1>
+        <div id='user-list'
+        style={{
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            height: "100%",
+            backgroundColor: 'black',
+            margin: "15%",
+          }}>
         <span>
         {charList.map((char) => 
         <Fragment key={char.id}>
@@ -56,6 +70,7 @@ function CharacterList (){
         )}
         </span>
         </div>
+        </>
     )
 }
 

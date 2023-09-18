@@ -52,22 +52,16 @@ router.post('/', rejectUnauthenticated,(req, res) => {
 })
 
 //PUT to update character info
-router.put('/', rejectUnauthenticated, (req, res) => {
+router.put('/:id', rejectUnauthenticated, (req, res) => {
   const updatedChar = req.body;
 
   const queryText = `UPDATE "character_list"
   SET "character_name" = $1,
-  "character_race" = $2,
-  "character_class" = $3,
-  "character_background" = $4,
-  "character_backstory" = $5
-  WHERE id=$6;`
+  "character_backstory" = $2
+  WHERE "id"=$3;`
 
   const queryValues = [
     updatedChar.character_name,
-    updatedChar.character_race,
-    updatedChar.character_class,
-    updatedChar.character_background,
     updatedChar.character_backstory,
     updatedChar.id
   ];
