@@ -8,6 +8,8 @@ import {
 
 import { useDispatch, useSelector } from 'react-redux';
 
+import { MantineProvider, Text } from '@mantine/core';
+
 import Nav from '../Nav/Nav';
 import Footer from '../Footer/Footer';
 
@@ -41,6 +43,7 @@ function App() {
   }, [dispatch]);
 
   return (
+    <MantineProvider withGlobalStyles withNormalizeCSS>
     <Router>
       <div>
         <Nav />
@@ -164,6 +167,7 @@ function App() {
         <Footer />
       </div>
     </Router>
+    </MantineProvider>
   );
 }
 

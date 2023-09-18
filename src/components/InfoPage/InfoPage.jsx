@@ -8,7 +8,9 @@ import React from 'react';
 function InfoPage() {
   return (
     <div className="container">
-      <p>Info Page</p>
+      <h1>Info Page</h1>
+      <p>Greetings fellow creators, players, and/or D&D enthusiasts. My name is Hannah Comparetto and I am the creator of this app</p>
+      <a href="https://ibb.co/88Bydfd"><img src="https://i.ibb.co/ZTJQYFY/TWC-Dn-D-5-E-Character-Sheet-v1-7.jpg" alt="TWC-Dn-D-5-E-Character-Sheet-v1-7" border="0" /></a>
     </div>
   );
 }

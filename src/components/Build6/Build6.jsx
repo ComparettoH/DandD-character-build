@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux'; 
 import {useHistory} from 'react-router-dom';
+import { Textarea } from '@mantine/core';
+import { Container } from '@mantine/core';
 
 function Build6 (){
     const dispatch = useDispatch();
@@ -37,7 +39,17 @@ function Build6 (){
         <h1>Step 5: Enter any backstory your character may have!
         </h1>
         <form onSubmit={handleSubmit}>
-        <textarea value={newCharBS} onChange={enterBackStory} placeholder='Enter backstory, questions for your DM, and/or thoughts here'/>
+        <Container>
+        <Textarea
+        aria-label="My textarea"
+        placeholder='Enter backstory, questions for your DM, and/or thoughts here'
+        size='xs'
+        px='xl'
+        minRows={2}
+        maxRows={4}
+        value={newCharBS} onChange={enterBackStory} 
+        />
+        </Container>
         {/* possibly create prompt button if stretch/time allows */}
         <ul>Prompt ideas:
             <li>What motivates your character?</li>
