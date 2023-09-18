@@ -45,6 +45,8 @@ function Build6 (){
             <li>How old is your character?</li>
         </ul>
         <button onClick={saveBackstory}>Save Backstory</button>
+        <br></br>
+        <br></br>
         <button type='submit'>Submit Character</button>
         </form>
         </div>

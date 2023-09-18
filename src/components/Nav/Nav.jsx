@@ -10,8 +10,9 @@ function Nav() {
   return (
     <div className="nav">
       <Link to="/home">
-        <h2 className="nav-title">Roll Play</h2>
+        <h2 className="nav-title"><img src="https://i.ibb.co/9ZkWphC/20Dice.jpg" alt="20 sided dice img"></img>  Roll Play</h2>
       </Link>
+  
       <div>
         {/* If no user is logged in, show these links */}
         {!user.id && (

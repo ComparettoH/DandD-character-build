@@ -8,3 +8,5 @@ const genderReducer = (state = [], action) => {
   };
   
   export default genderReducer;
+
+// Hopefull feature to be added as step in character build
