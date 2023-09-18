@@ -11,7 +11,7 @@ router.get('/', (req, res) => {
     JOIN "character_race" ON "character_race"."id" = "character_list"."character_race"
     JOIN "character_class" ON "character_class"."id" = "character_list"."character_class"
     JOIN "character_background" ON "character_background"."id" = "character_list"."character_background"
-    WHERE user_id = $1;`
+    WHERE user_id = $1 ORDER BY "character_list"."id" DESC;`
 
     pool.query(queryText, [req.user.id])
     .then( (result) => {

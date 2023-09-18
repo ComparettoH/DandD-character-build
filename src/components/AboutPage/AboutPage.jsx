@@ -9,7 +9,10 @@ function AboutPage() {
   return (
     <div className="container">
       <div>
-        <p>This about page is for anyone to read!</p>
+        <h1 style={{backgroundColor:"rgb(188, 250, 250)"}}>About</h1>
+
+        <p style={{backgroundColor:"black", color:"white"}}>Greetings fellow creators, players, and/or D&D enthusiasts. My name is Hannah Comparetto and I am the creator of this app</p>
+        <img src="https://i.ibb.co/ZTJQYFY/TWC-Dn-D-5-E-Character-Sheet-v1-7.jpg" alt="TWC-Dn-D-5-E-Character-Sheet-v1-7" border="0" />
       </div>
     </div>
   );

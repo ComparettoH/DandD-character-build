@@ -2,7 +2,7 @@ import { Fragment, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import React, { useEffect } from 'react';
-// import { Container } from '@mantine/core';
+import { Button } from '@mantine/core';
 
 
 export function Character() {
@@ -70,7 +70,7 @@ export function Character() {
     console.log('testing for character edit', charToEdit)
 
     return (
-        <div id="one-character">
+        <div style={{backgroundColor:"black", color:"white"}} id="one-character">
             <h1>Edit Character</h1>
             <span>
                     <form onSubmit={handleSubmit}>
@@ -109,15 +109,15 @@ export function Character() {
                                         )}
                                     </select> */}
 
-                                    <p>Current Backstory: {charToEdit.character_backstory}</p>
+                                    <h2>Update Character Backstory:</h2>
                                     <textarea key='2'
                                         value={charToEdit.character_backstory}
                                         placeholder='New Story'
                                         onChange={(event) => handleUpdate(event, 'character_backstory')} />
                                 </Fragment>
                             <br></br>
-                            <button type='submit'>Update Character</button>
-                            <button onClick={cancelEdit}>Cancel</button>
+                            <Button  color="dark" type='submit'>Update Character</Button>
+                            <Button  color="red" style={{margin: '10px'}} onClick={cancelEdit}>Cancel</Button>
                         </>
                     </form>
             </span>
