@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import './Build4.css';
+import { Container, Button } from '@mantine/core';
 
 function Build4 (){
     const dispatch = useDispatch();
@@ -40,13 +42,15 @@ function Build4 (){
                     <option onClick={() => handleClick (oneClass)} key={oneClass.id} value={newCharClass}>{oneClass.class}</option>
                     )}
                     </select>
-                    <p>
+                    <Container>
+                    <p className='class-p'>
                     {description}
                     </p>
+                    </Container>
               
-            <button onClick={addClass}>
+            <Button color="dark" onClick={addClass}>
                 Next Step
-            </button> 
+            </Button> 
         </div>
     )
 }

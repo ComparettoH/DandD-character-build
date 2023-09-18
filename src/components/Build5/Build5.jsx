@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
+import './Build5.css';
+import { Container, Button } from '@mantine/core';
 
 function Build5 (){
     const dispatch = useDispatch();
@@ -40,13 +42,15 @@ function Build5 (){
                     <option onClick={() => handleClick (oneBG)} key={oneBG.id} value={newCharBackG}>{oneBG.background}</option>
                     )}
                     </select>
-                    <p>
+                    <Container>
+                    <p className='backG-p'>
                     {description}
                     </p>
+                    </Container>
               
-            <button onClick={addBackground}>
+            <Button color="dark" onClick={addBackground}>
                 Next Step
-            </button> 
+            </Button> 
         </div>
     )
 }

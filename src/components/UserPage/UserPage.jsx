@@ -23,8 +23,8 @@ const goToList = () => {
       <img src="https://i.ibb.co/rQTg1XC/one-scroll.png" alt="one-scroll" border="0"/>
       </span>
       <br></br>
-      <button className="btn" onClick={goToBuild}>Create New Character</button>
-      <button className="btn" onClick={goToList}>Saved Characters</button>
+      <button style={{color: 'black'}}className="btn" onClick={goToBuild}>Create New Character</button>
+      <button style={{color: 'black'}}className="btn" onClick={goToList}>Saved Characters</button>
     </div>
   );
 }
