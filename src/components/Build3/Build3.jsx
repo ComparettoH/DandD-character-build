@@ -1,6 +1,8 @@
 import { useDispatch, useSelector } from 'react-redux';
 import React, {useEffect, useState} from 'react';
 import { useHistory } from 'react-router-dom/cjs/react-router-dom.min';
+import { Button, Container } from '@mantine/core';
+import './Build3.css';
 
 function Build3 (){
     const dispatch = useDispatch();
@@ -42,13 +44,15 @@ function Build3 (){
                     <option onClick={() => handleClick (oneRace)} key={oneRace.id} value={newCharRace}>{oneRace.race}</option>
                     )}
                     </select>
-                    <p>
+                    <Container>
+                    <p className='race-p'>
                     {description}
                     </p>
+                    </Container>
                
-            <button onClick={addRace}>
+            <Button color="dark"  onClick={addRace}>
                 Next Step
-            </button> 
+            </Button> 
         </div>
 
     )
