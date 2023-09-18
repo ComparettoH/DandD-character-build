@@ -1,2 +1,9 @@
-html, body, h1, p, #root { height: 100%; 
-color: white;}
+.char { height: 100%; 
+color: white;
+background-color: black;
+font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;}
+
+.list-header{
+    color: white;
+    background-color: rgb(116, 173, 36);
+}
